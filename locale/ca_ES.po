@@ -1,0 +1,63 @@
+# 
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "field:survey.survey,esale:"
+msgid "eSale"
+msgstr "eSale"
+
+msgctxt "field:survey.survey,slug:"
+msgid "slug"
+msgstr "Slug"
+
+msgctxt "field:survey.survey,websites:"
+msgid "Websites"
+msgstr "Lloc web"
+
+msgctxt "field:survey.survey-galatea.website,create_date:"
+msgid "Create Date"
+msgstr "Data dcreació"
+
+msgctxt "field:survey.survey-galatea.website,create_uid:"
+msgid "Create User"
+msgstr "Usuari creació"
+
+msgctxt "field:survey.survey-galatea.website,id:"
+msgid "ID"
+msgstr "ID"
+
+msgctxt "field:survey.survey-galatea.website,rec_name:"
+msgid "Name"
+msgstr "Nom"
+
+msgctxt "field:survey.survey-galatea.website,survey:"
+msgid "Survey"
+msgstr "Enquesta"
+
+msgctxt "field:survey.survey-galatea.website,website:"
+msgid "Website"
+msgstr "Lloc Web"
+
+msgctxt "field:survey.survey-galatea.website,write_date:"
+msgid "Write Date"
+msgstr "Data modificació"
+
+msgctxt "field:survey.survey-galatea.website,write_uid:"
+msgid "Write User"
+msgstr "Usuari modificació"
+
+msgctxt "help:survey.survey,esale:"
+msgid "Available survey in eSale plattforms."
+msgstr "L'enquesta estarà disponible en plataformes eSale."
+
+msgctxt "help:survey.survey,slug:"
+msgid "Cannonical uri."
+msgstr "Cannonical uri."
+
+msgctxt "help:survey.survey,websites:"
+msgid "Survey will be available in those websites"
+msgstr "L'enquesta estarà disponible en aquests llocs web."
+
+msgctxt "model:survey.survey-galatea.website,name:"
+msgid "Survey - Galatea Website"
+msgstr "Enquesta - Galatea Lloc Web"
