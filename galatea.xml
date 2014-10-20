@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!-- This file is part galatea_survey module for Tryton.
+The COPYRIGHT file at the top level of this repository contains the full copyright notices and license terms. -->
+<tryton>
+    <data>
+        <!-- Access -->
+        <record model="ir.model.access" id="access_galatea_survey_survey">
+            <field name="model" search="[('model', '=', 'survey.survey')]"/>
+            <field name="group" ref="galatea.group_galatea"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_galatea_survey_field">
+            <field name="model" search="[('model', '=', 'survey.field')]"/>
+            <field name="group" ref="galatea.group_galatea"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+    </data>
+
+    <data depends="survey_step">
+        <!-- Access -->
+        <record model="ir.model.access" id="access_galatea_survey_step">
+            <field name="model" search="[('model', '=', 'survey.step')]"/>
+            <field name="group" ref="galatea.group_galatea"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+    </data>
+</tryton>
