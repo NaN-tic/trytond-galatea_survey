@@ -2,15 +2,17 @@
 <!-- This file is part galatea_survey module for Tryton.
 The COPYRIGHT file at the top level of this repository contains the full copyright notices and license terms. -->
 <data>
-    <xpath expr="/form/field[@name=&quot;code&quot;]" position="after">
+    <xpath expr="/form/group[@id=&quot;checkboxes&quot;]/field[@name=&quot;active&quot;]" position="after">
         <label name="esale"/>
         <field name="esale"/>
+    </xpath>
+    <xpath expr="/form/field[@name=&quot;fields_&quot;]" position="before">
         <label name="slug"/>
         <field name="slug"/>
     </xpath>
     <xpath expr="/form/field[@name=&quot;fields_&quot;]" position="after">
         <newline/>
-        <separator name="websites" colspan="4"/>
-        <field name="websites" colspan="4"/>
+        <separator name="websites" colspan="6"/>
+        <field name="websites" colspan="6"/>
     </xpath>
 </data>
