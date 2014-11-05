@@ -3,7 +3,7 @@
 # The COPYRIGHT file at the top level of this repository contains the full
 # copyright notices and license terms.
 from trytond.model import ModelSQL, fields
-from trytond.pool import PoolMeta
+from trytond.pool import Pool, PoolMeta
 from trytond.pyson import Eval, Bool
 from .tools import slugify
 
@@ -27,6 +27,11 @@ class Survey:
             'invisible': ~Bool(Eval('esale')),
         }, depends=['esale'],
         help='Survey will be available in those websites')
+
+    @staticmethod
+    def default_websites():
+        Website = Pool().get('galatea.website')
+        return [p.id for p in Website.search([])]
 
     @classmethod
     def __setup__(cls):
