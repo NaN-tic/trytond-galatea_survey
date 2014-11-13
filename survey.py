@@ -28,6 +28,16 @@ class Survey:
             'invisible': ~Bool(Eval('esale')),
         }, depends=['esale'],
         help='Survey will be available in those websites')
+    login = fields.Boolean('Login',
+        states={
+            'invisible': ~Bool(Eval('esale')),
+        }, depends=['esale'],
+        help='Login Users')
+    manager = fields.Boolean('Manager',
+        states={
+            'invisible': ~Bool(Eval('esale')),
+        }, depends=['esale'],
+        help='Manager Users')
 
     @staticmethod
     def default_websites():
