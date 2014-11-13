@@ -6,6 +6,7 @@ from trytond.model import ModelSQL, fields
 from trytond.pool import Pool, PoolMeta
 from trytond.pyson import Eval, Bool
 from .tools import slugify
+from collections import OrderedDict
 
 __all__ = ['Survey', 'SurveyGalateaWebSite']
 __metaclass__ = PoolMeta
@@ -47,9 +48,47 @@ class Survey:
             res['slug'] = slugify(self.name)
         return res
 
-    def get_survey_form(self, survey):
-        # TODO
-        return True
+    def galatea_survey_form(self):
+        '''Return a dict with form fields grouped by steps'''
+        # TODO: create order by steps and fields.
+        # Current: order fields is with sequence field (all fields).
+        # Not use order with steps.
+        survey_form = {}
+
+        steps = []
+        for f in self.fields_:
+            if not f.step in steps:
+                steps.append(f.step)
+
+        before_step = None
+        for f in self.fields_:
+            current_step = f.step.code
+            if before_step != current_step:
+                fields = []
+                survey_form[f.step.code] = OrderedDict()
+                survey_form[f.step.code]['code'] = f.step.code
+                survey_form[f.step.code]['name'] = f.step.name
+                survey_form[f.step.code]['sequence'] = f.step.sequence or 1
+
+            fields.append({
+                'name': f.name,
+                'label': f.string,
+                'type_': f.type_,
+                'required': f.required,
+                'textarea': f.textarea,
+                'email': f.email,
+                'password': f.password,
+                'url': f.url,
+                'help': f.help_,
+                'selection': f.selection,
+                'default_value': f.default_value,
+                })
+
+            survey_form[f.step.code]['fields'] = fields
+            before_step = current_step
+        return dict(OrderedDict(
+            sorted(survey_form.items(), key=lambda t: t[1]['sequence'])
+            ))
 
 
 class SurveyGalateaWebSite(ModelSQL):
