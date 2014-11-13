@@ -47,6 +47,10 @@ class Survey:
         states={
             'invisible': ~Bool(Eval('esale')),
         }, depends=['esale'])
+    esale_notes = fields.Text("Notes", translate=True,
+        states={
+            'invisible': ~Bool(Eval('esale')),
+        }, depends=['esale'])
     esale_response = fields.Text("Response", translate=True,
         states={
             'invisible': ~Bool(Eval('esale')),
