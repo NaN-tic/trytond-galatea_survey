@@ -8,7 +8,7 @@ from trytond.pyson import Eval, Bool
 from .tools import slugify
 from collections import OrderedDict
 
-__all__ = ['Survey', 'SurveyGalateaWebSite']
+__all__ = ['Survey', 'SurveyField', 'SurveyGalateaWebSite']
 __metaclass__ = PoolMeta
 
 
@@ -16,7 +16,7 @@ class Survey:
     __name__ = 'survey.survey'
     esale = fields.Boolean('eSale',
         help='Available survey in eSale plattforms.')
-    slug = fields.Char('slug', translate=True,
+    slug = fields.Char('Slug', translate=True,
         states={
             'required': Bool(Eval('esale')),
             'invisible': ~Bool(Eval('esale')),
@@ -38,6 +38,11 @@ class Survey:
             'invisible': ~Bool(Eval('esale')),
         }, depends=['esale'],
         help='Manager Users')
+    css = fields.Char('CSS', translate=True,
+        states={
+            'invisible': ~Bool(Eval('esale')),
+        }, depends=['esale'],
+        help='CSS style.')
 
     @staticmethod
     def default_websites():
@@ -92,6 +97,7 @@ class Survey:
                 'help': f.help_,
                 'selection': f.selection,
                 'default_value': f.default_value,
+                'css': f.css,
                 })
 
             survey_form[f.step.code]['fields'] = fields
@@ -99,6 +105,12 @@ class Survey:
         return dict(OrderedDict(
             sorted(survey_form.items(), key=lambda t: t[1]['sequence'])
             ))
+
+
+class SurveyField:
+    __name__ = 'survey.field'
+    css = fields.Char('CSS',
+        help='CSS style.')
 
 
 class SurveyGalateaWebSite(ModelSQL):

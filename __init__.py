@@ -7,5 +7,6 @@ from .survey import *
 def register():
     Pool.register(
         Survey,
+        SurveyField,
         SurveyGalateaWebSite,
         module='galatea_survey', type_='model')

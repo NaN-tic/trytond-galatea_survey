@@ -13,6 +13,8 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
     <xpath expr="/form/field[@name=&quot;fields_&quot;]" position="before">
         <label name="slug"/>
         <field name="slug"/>
+        <label name="css"/>
+        <field name="css"/>
     </xpath>
     <xpath expr="/form/field[@name=&quot;fields_&quot;]" position="after">
         <newline/>
