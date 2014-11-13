@@ -43,6 +43,14 @@ class Survey:
             'invisible': ~Bool(Eval('esale')),
         }, depends=['esale'],
         help='CSS style.')
+    esale_description = fields.Text("Description", translate=True,
+        states={
+            'invisible': ~Bool(Eval('esale')),
+        }, depends=['esale'])
+    esale_response = fields.Text("Response", translate=True,
+        states={
+            'invisible': ~Bool(Eval('esale')),
+        }, depends=['esale'])
 
     @staticmethod
     def default_websites():
