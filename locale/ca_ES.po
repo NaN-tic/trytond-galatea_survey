@@ -2,12 +2,40 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
+msgctxt "field:survey.field,css:"
+msgid "CSS"
+msgstr "CSS"
+
+msgctxt "field:survey.survey,css:"
+msgid "CSS"
+msgstr "CSS"
+
 msgctxt "field:survey.survey,esale:"
 msgid "eSale"
 msgstr "eSale"
 
+msgctxt "field:survey.survey,esale_description:"
+msgid "Description"
+msgstr "Descripció"
+
+msgctxt "field:survey.survey,esale_notes:"
+msgid "Notes"
+msgstr "Notes"
+
+msgctxt "field:survey.survey,esale_response:"
+msgid "Response"
+msgstr "Resposta"
+
+msgctxt "field:survey.survey,login:"
+msgid "Login"
+msgstr "Nom usuari"
+
+msgctxt "field:survey.survey,manager:"
+msgid "Manager"
+msgstr "Gestor"
+
 msgctxt "field:survey.survey,slug:"
-msgid "slug"
+msgid "Slug"
 msgstr "Slug"
 
 msgctxt "field:survey.survey,websites:"
@@ -46,9 +74,25 @@ msgctxt "field:survey.survey-galatea.website,write_uid:"
 msgid "Write User"
 msgstr "Usuari modificació"
 
+msgctxt "help:survey.field,css:"
+msgid "CSS style."
+msgstr "CSS estil"
+
+msgctxt "help:survey.survey,css:"
+msgid "CSS style."
+msgstr "CSS estil"
+
 msgctxt "help:survey.survey,esale:"
 msgid "Available survey in eSale plattforms."
 msgstr "L'enquesta estarà disponible en plataformes eSale."
+
+msgctxt "help:survey.survey,login:"
+msgid "Login Users"
+msgstr "Usuaris identificats"
+
+msgctxt "help:survey.survey,manager:"
+msgid "Manager Users"
+msgstr "Usuaris gestors"
 
 msgctxt "help:survey.survey,slug:"
 msgid "Cannonical uri."
@@ -61,3 +105,7 @@ msgstr "L'enquesta estarà disponible en aquests llocs web."
 msgctxt "model:survey.survey-galatea.website,name:"
 msgid "Survey - Galatea Website"
 msgstr "Enquesta - Galatea Lloc Web"
+
+msgctxt "view:survey.survey:"
+msgid "eSale"
+msgstr "eSale"
