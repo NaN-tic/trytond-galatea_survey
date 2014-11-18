@@ -11,6 +11,7 @@ from collections import OrderedDict
 __all__ = ['Survey', 'SurveyField', 'SurveyGalateaWebSite']
 __metaclass__ = PoolMeta
 
+SURVEY_EXCLUDE_FIELDS = ['many2one']
 
 class Survey:
     __name__ = 'survey.survey'
@@ -89,6 +90,8 @@ class Survey:
 
         before_step = None
         for f in self.fields_:
+            if f.type_ in SURVEY_EXCLUDE_FIELDS:
+                continue
             current_step = f.step.code
             if before_step != current_step:
                 fields = []
