@@ -44,7 +44,7 @@ msgstr "Lloc web"
 
 msgctxt "field:survey.survey-galatea.website,create_date:"
 msgid "Create Date"
-msgstr "Data dcreació"
+msgstr "Data creació"
 
 msgctxt "field:survey.survey-galatea.website,create_uid:"
 msgid "Create User"
