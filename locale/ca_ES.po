@@ -40,7 +40,7 @@ msgstr "Slug"
 
 msgctxt "field:survey.survey,websites:"
 msgid "Websites"
-msgstr "Lloc web"
+msgstr "Llocs web"
 
 msgctxt "field:survey.survey-galatea.website,create_date:"
 msgid "Create Date"
@@ -64,7 +64,7 @@ msgstr "Enquesta"
 
 msgctxt "field:survey.survey-galatea.website,website:"
 msgid "Website"
-msgstr "Lloc Web"
+msgstr "Lloc web"
 
 msgctxt "field:survey.survey-galatea.website,write_date:"
 msgid "Write Date"
