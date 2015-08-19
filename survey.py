@@ -4,7 +4,7 @@
 # copyright notices and license terms.
 from trytond.model import ModelSQL, fields
 from trytond.pool import Pool, PoolMeta
-from trytond.pyson import Eval, Bool
+from trytond.pyson import Eval, Bool, Not
 from .tools import slugify
 from collections import OrderedDict
 
@@ -12,6 +12,7 @@ __all__ = ['Survey', 'SurveyField', 'SurveyGalateaWebSite']
 __metaclass__ = PoolMeta
 
 SURVEY_EXCLUDE_FIELDS = ['many2one']
+
 
 class Survey:
     __name__ = 'survey.survey'
@@ -57,11 +58,6 @@ class Survey:
             'invisible': ~Bool(Eval('esale')),
         }, depends=['esale'])
 
-    @staticmethod
-    def default_websites():
-        Website = Pool().get('galatea.website')
-        return [p.id for p in Website.search([])]
-
     @classmethod
     def __setup__(cls):
         super(Survey, cls).__setup__()
@@ -69,6 +65,18 @@ class Survey:
             cls.name.on_change.add('name')
         if 'slug' not in cls.name.on_change:
             cls.name.on_change.add('slug')
+
+    @staticmethod
+    def default_websites():
+        Website = Pool().get('galatea.website')
+        return [p.id for p in Website.search([])]
+
+    @classmethod
+    def view_attributes(cls):
+        return super(Survey, cls).view_attributes() + [
+            ('//page[@id="esale"]', 'states', {
+                    'invisible': Not(Bool(Eval('esale'))),
+                    })]
 
     def on_change_name(self):
         res = {}
