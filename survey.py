@@ -78,11 +78,10 @@ class Survey:
                     'invisible': Not(Bool(Eval('esale'))),
                     })]
 
+    @fields.depends('name', 'slug')
     def on_change_name(self):
-        res = {}
         if self.name and not self.slug:
-            res['slug'] = slugify(self.name)
-        return res
+            self.slug = slugify(self.name)
 
     def galatea_survey_form(self):
         '''Return a dict with form fields grouped by steps'''
