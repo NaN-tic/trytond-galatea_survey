@@ -9,12 +9,12 @@ from .tools import slugify
 from collections import OrderedDict
 
 __all__ = ['Survey', 'SurveyField', 'SurveyGalateaWebSite']
-__metaclass__ = PoolMeta
 
 SURVEY_EXCLUDE_FIELDS = ['many2one']
 
 
 class Survey:
+    __metaclass__ = PoolMeta
     __name__ = 'survey.survey'
     esale = fields.Boolean('eSale',
         help='Available survey in eSale plattforms.')
@@ -130,6 +130,7 @@ class Survey:
 
 
 class SurveyField:
+    __metaclass__ = PoolMeta
     __name__ = 'survey.field'
     css = fields.Char('CSS',
         help='CSS style.')
